@@ -1,0 +1,98 @@
+//
+//                                                        ▀▀▀▀▀     ▀▀▀▀▀          ▀▀█▀▀
+//                                                        ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
+//                                                        █   █  █  █   █  █  █   █  █  █   █
+//                                                         ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
+//                                                               █      ▄▄▄█▄▄▄    █   █  
+//                                                               ▀      █  █  █     █▄█
+//                                                             ▀▀▀▀▀    █  █  █      ▀
+//                                                                      ▀  ▀  ▀
+//
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+
+#define Base            0
+#define Sym             1
+#define Nav             2
+#define Adjust          3
+#define Game            4
+
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+    lazy;
+}
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        }
+    }
+
+    //               0   1   2   3   4                   5   6   7   8   9
+    //               10  11  12  13  14                  15  16  17  18  19
+    //           20  21  22  23  24  25                  26  27  28  29  30  31
+    //                       32  33  34                  35  36  37
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        Base {
+            label = "Base";
+            bindings = <
+                     &kp Q  &kp W  &kp F     &kp P    &kp B              &kp J      &kp L    &kp U      &kp Y    &kp SEMI
+                     &kp A  &kp R  &kp S     &kp T    &kp G              &kp M      &kp N    &kp E      &kp I    &kp O
+            &kp ESC  &kp Z  &kp X  &kp C     &kp D    &kp V              &kp K      &kp H    &kp COMMA  &kp DOT  &kp SLASH  &kp SQT
+                                   &kp BSPC  &mo Sym  &kp LSHFT          &kp SPACE  &mo Nav  &kp RET
+            >;
+        };
+
+        Sym {
+            label = "Sym";
+            bindings = <
+                      &kp LT     &kp LBKT  &kp LBRC  &kp LPAR   &kp AMPS         &kp AT         &kp RPAR       &kp RBRC     &kp RBKT        &kp GT
+                      &sk LSHFT  &sk LALT  &sk LGUI  &sk LCTRL  &kp EQUAL        &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp LCLK
+            &kp TAB   &kp HASH   &kp PIPE  &kp STAR  &kp MINUS  &kp PLUS         &kp CARET      &kp BSLH       &kp DLLR     &kp EXCL        &kp PRCNT  &kp GRAVE
+                                           &none     &none      &none            &kp SPACE      &mo Nav        &kp RET
+            >;
+        };
+
+        Nav {
+            label = "Nav";
+            bindings = <
+                    &none   &none   &none     &none    &none                    &none     &sk RCTRL  &sk RGUI  &sk RALT   &sk RSHFT
+                    &none   &none   &none     &none    &none                    &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT  &kp UNDER
+            &TILDE  &kp N1  &kp N2  &kp N3    &kp N4   &kp N5                   &kp N6    &kp N7     &kp N8    &kp N9     &kp N0     &kp MINUS
+                                    &kp BSPC  &mo Sym  &kp LSHFT                &none       &none      &none
+            >;
+        };
+
+        Adjust {
+            label = "Adjust";
+            bindings = <
+                      &to Game  &none   &none   &none   &none           &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT &none
+                      &none     &none   &none   &none   &none           &kp HOME        &kp PG_DN       &kp PG_UP    &kp END         &none
+            &kp F12   &kp F1    &kp F2  &kp F3  &kp F4  &kp F5          &kp F6          &kp F7          &kp F8       &kp F9          &kp F10     &kp F11
+                                        &none   &none   &none           &none  &none  &none
+            >;
+        };
+
+        Game {
+            label = "Game";
+            bindings = <
+                     &M     &kp Q  &kp W     &kp E    &kp R              &none      &none    &none      &none    &kp SEMI
+                     &LSHFT &kp A  &kp S     &kp D    &kp F              &kp M      &kp N    &kp E      &kp I    &kp O
+            &kp TAB  &kp Z  &kp X  &kp C     &none    &kp V              &kp K      &kp H    &kp COMMA  &kp DOT  &kp SLASH  &kp SQT
+                                   &to Base  &none  &kp SPACE            &kp SPACE  &mo Nav  &kp RET
+            >;
+        };
+    };
+};
