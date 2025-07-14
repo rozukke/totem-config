@@ -52,10 +52,10 @@
         Base {
             label = "Base";
             bindings = <
-                     &kp Q  &kp W  &kp F     &kp P    &kp B              &kp J      &kp L    &kp U      &kp Y    &kp SEMI
-                     &kp A  &kp R  &kp S     &kp T    &kp G              &kp M      &kp N    &kp E      &kp I    &kp O
-            &kp ESC  &kp Z  &kp X  &kp C     &kp D    &kp V              &kp K      &kp H    &kp COMMA  &kp DOT  &kp SLASH  &kp SQT
-                                   &kp BSPC  &mo Sym  &kp LSHFT          &kp SPACE  &mo Nav  &kp RET
+                     &kp Q  &kp W  &kp F     &kp P    &kp B                      &kp J      &kp L    &kp U      &kp Y    &kp SEMI
+                     &kp A  &kp R  &kp S     &kp T    &kp G                      &kp M      &kp N    &kp E      &kp I    &kp O
+            &kp ESC  &kp Z  &kp X  &kp C     &kp D    &kp V                      &kp K      &kp H    &kp COMMA  &kp DOT  &kp SLASH  &kp SQT
+                                   &kp BSPC  &mo Sym  &kp LSHFT                  &kp SPACE  &mo Nav  &kp RET
             >;
         };
 
@@ -72,30 +72,30 @@
         Nav {
             label = "Nav";
             bindings = <
-                       &none   &none   &none     &none    &none                    &none     &sk RCTRL  &sk RGUI  &sk RALT   &sk RSHFT
-                       &none   &none   &none     &none    &none                    &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT  &kp UNDER
-            &kp TILDE  &kp N1  &kp N2  &kp N3    &kp N4   &kp N5                   &kp N6    &kp N7     &kp N8    &kp N9     &kp N0     &kp MINUS
-                                       &kp BSPC  &mo Sym  &kp LSHFT                &none       &none      &none
+                       &none   &none   &none    &none    &none                   &none     &sk RCTRL  &sk RGUI  &sk RALT   &sk RSHFT
+                       &none   &none   &none    &none    &none                   &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT  &kp UNDER
+            &kp TILDE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                  &kp N6    &kp N7     &kp N8    &kp N9     &kp N0     &kp MINUS
+                                       &kp DEL  &mo Sym  &kp LSHF                &none       &none      &none
             >;
         };
 
         Adjust {
             label = "Adjust";
             bindings = <
-                      &to Game  &none   &none   &none   &none           &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT &none
-                      &none     &none   &none   &none   &caps_word      &kp HOME        &kp PG_DN       &kp PG_UP    &kp END         &none
-            &kp F12   &kp F1    &kp F2  &kp F3  &kp F4  &kp F5          &kp F6          &kp F7          &kp F8       &kp F9          &kp F10     &kp F11
-                                        &none   &none   &none           &none  &none  &none
+                      &to Game  &none   &none   &none   &none                    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT &none
+                      &none     &none   &none   &none   &caps_word               &kp HOME        &kp PG_DN       &kp PG_UP    &kp END         &none
+            &kp F12   &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                   &kp F6          &kp F7          &kp F8       &kp F9          &kp F10     &kp F11
+                                        &none   &none   &none                    &none  &none  &none
             >;
         };
 
         Game {
             label = "Game";
             bindings = <
-                     &kp ESC    &kp Q  &kp W    &kp E      &kp R              &none  &none  &none  &none  &none
-                     &kp LSHFT  &kp A  &kp S    &kp D      &kp F              &none  &none  &none  &none  &none
-            &kp TAB  &kp Z      &kp X  &kp C    &kp V      &kp M              &none  &none  &none  &none  &none  &none
-                                       &to Base &kp LCTRL  &kp SPACE          &none  &none  &none
+                     &kp ESC    &kp Q  &kp W    &kp E      &kp R                 &none  &none  &none  &none  &none
+                     &kp LSHFT  &kp A  &kp S    &kp D      &kp F                 &none  &none  &none  &none  &none
+            &kp TAB  &kp Z      &kp X  &kp C    &kp V      &kp M                 &none  &none  &none  &none  &none  &none
+                                       &to Base &kp LCTRL  &kp SPACE             &none  &none  &none
             >;
         };
     };
