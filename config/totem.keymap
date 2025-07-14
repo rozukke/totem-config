@@ -28,6 +28,10 @@
     lazy;
 };
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -79,7 +83,7 @@
             label = "Adjust";
             bindings = <
                       &to Game  &none   &none   &none   &none           &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT &none
-                      &none     &none   &none   &none   &none           &kp HOME        &kp PG_DN       &kp PG_UP    &kp END         &none
+                      &none     &none   &none   &none   &caps_word      &kp HOME        &kp PG_DN       &kp PG_UP    &kp END         &none
             &kp F12   &kp F1    &kp F2  &kp F3  &kp F4  &kp F5          &kp F6          &kp F7          &kp F8       &kp F9          &kp F10     &kp F11
                                         &none   &none   &none           &none  &none  &none
             >;
@@ -88,10 +92,10 @@
         Game {
             label = "Game";
             bindings = <
-                     &kp M     &kp Q  &kp W     &kp E    &kp R              &none      &none    &none      &none    &kp SEMI
-                     &kp LSHFT &kp A  &kp S     &kp D    &kp F              &kp M      &kp N    &kp E      &kp I    &kp O
-            &kp TAB  &kp Z     &kp X  &kp C     &none    &kp V              &kp K      &kp H    &kp COMMA  &kp DOT  &kp SLASH  &kp SQT
-                                      &to Base  &none  &kp SPACE               &none      &none    &none
+                     &kp ESC    &kp Q  &kp W    &kp E      &kp R              &none  &none  &none  &none  &none
+                     &kp LSHFT  &kp A  &kp S    &kp D      &kp F              &none  &none  &none  &none  &none
+            &kp TAB  &kp Z      &kp X  &kp C    &kp V      &kp M              &none  &none  &none  &none  &none  &none
+                                       &to Base &kp LCTRL  &kp SPACE          &none  &none  &none
             >;
         };
     };
