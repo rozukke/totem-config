@@ -25,11 +25,10 @@
 &sk {
     release-after-ms = <1000>;
     quick-release;
-    lazy;
 };
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
+    continue-list = <UNDERSCORE MINUS BSPC>;
 };
 
 / {
@@ -62,30 +61,30 @@
         Sym {
             label = "Sym";
             bindings = <
-                      &kp LT     &kp LBKT  &kp LBRC  &kp LPAR   &kp AMPS         &kp AT         &kp RPAR       &kp RBRC     &kp RBKT        &kp GT
-                      &sk LSHFT  &sk LALT  &sk LGUI  &sk LCTRL  &kp EQUAL        &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp LCLK
-            &kp TAB   &kp HASH   &kp PIPE  &kp STAR  &kp MINUS  &kp PLUS         &kp CARET      &kp BSLH       &kp DLLR     &kp EXCL        &kp PRCNT  &kp GRAVE
-                                           &none     &none      &none            &kp SPACE      &mo Nav        &kp RET
+                      &kp LT     &kp LBKT  &kp LBRC  &kp LPAR   &kp AMPS         &kp AT     &kp  RPAR      &kp  RBRC    &kp RBKT  &kp GT
+                      &sk LSHFT  &sk LALT  &sk LGUI  &sk LCTRL  &kp EQUAL        &kp TILDE  &msc SCRL_DOWN &msc SCRL_UP &none     &none
+            &kp TAB   &kp HASH   &kp PIPE  &kp STAR  &kp MINUS  &kp PLUS         &kp CARET  &kp  BSLH      &kp  DLLR    &kp EXCL  &kp PRCNT  &kp GRAVE
+                                           &none     &none      &none            &kp SPACE  &mo  Nav       &kp  RET
             >;
         };
 
         Nav {
             label = "Nav";
             bindings = <
-                       &none   &none   &none    &none    &none                   &none     &sk RCTRL  &sk RGUI  &sk RALT   &sk RSHFT
-                       &none   &none   &none    &none    &none                   &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT  &kp UNDER
-            &kp TILDE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                  &kp N6    &kp N7     &kp N8    &kp N9     &kp N0     &kp MINUS
-                                       &kp DEL  &mo Sym  &kp LSHFT               &none       &none      &none
+                  &none          &kmp RCLK      &mmv MOVE_UP   &mkp LCLK       &none                   &none    &sk RCTRL  &sk RGUI  &sk RALT   &sk RSHFT
+                  &msc SCRL_LEFT &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_RIGHT         &kp LEFT &kp DOWN   &kp UP    &kp RIGHT  &kp UNDER
+            &none &kp N1         &kp N2         &kp N3         &kp N4          &kp N5                  &kp N6   &kp N7     &kp N8    &kp N9     &kp N0     &kp MINUS
+                                                &kp DEL        &mo Sym         &kp LSHFT               &none    &none      &none
             >;
         };
 
         Adjust {
             label = "Adjust";
             bindings = <
-                      &to Game  &none   &none   &none   &none                    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP &msc SCRL_RIGHT &none
-                      &none     &none   &none   &none   &caps_word               &kp HOME        &kp PG_DN       &kp PG_UP    &kp END         &kp INS
-            &kp F12   &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                   &kp F6          &kp F7          &kp F8       &kp F9          &kp F10     &kp F11
-                                        &none   &none   &none                    &none  &none  &none
+                      &to Game  &none   &none   &none   &none                    &none    &none     &none     &none   &none
+                      &none     &none   &none   &none   &caps_word               &kp HOME &kp PG_DN &kp PG_UP &kp END &kp INS
+            &kp F12   &kp F1    &kp F2  &kp F3  &kp F4  &kp F5                   &kp F6   &kp F7    &kp F8    &kp F9  &kp F10     &kp F11
+                                        &none   &none   &none                    &none    &none     &none
             >;
         };
 
